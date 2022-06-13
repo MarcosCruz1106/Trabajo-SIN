@@ -23,6 +23,7 @@ if($filas){
 
     ?>
     <h1 class="error"> ERROR DE AUTENTIFICACION </h1>
+    <!-- falta que esto de arriba se elimine después de un tiempo. FALTA INVESTIGAR -->
     <?php
 }
 
