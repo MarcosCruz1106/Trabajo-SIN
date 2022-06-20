@@ -10,13 +10,29 @@
 
 </head>
 <body>
-    <section>
-        <form action="validar.php" method="post">
-        <h4> Login de Acceso </h4>
-        <p> usuario <input type="text" name="usuario" id="usuario" placeholder="ingrese su usuario"> </p>
-        <p> contraseña <input type="text" name="contraseña" id="contraseña" placeholder="ingrese su contraseña"> </p>  
-        <input class="botons botoncito" type="submit" value="Ingresar">
-    </section>
+    
+    <h1>inicio</h1>
+
+    <?php
+    session_start();
+    if(isset($_SESSION["usuario"])){
+        $con= mysqli_connect("localhost","root","","mydb");
+        $sql = "SELECT * FROM usuario where dni = '".$_SESSION["usuario"]."'";
+        $result = mysqli_query($con, $sql);
+        $user = mysqli_fetch_array($result);
+        if($user['tipoUsuario'] == 0){
+            $rol="cliente";
+        }else{
+            $rol="administrador";
+        }
+        echo "Hola:  ". $user['usuario']." tu rol es: ".$rol;
+        echo "&nbsp; ";
+        echo "<a href='#'>Cerrar sesión</a>";
+    }else{
+        echo "<a href='#'>Ingresar</a>";
+    }
+
+    ?>
     
 </body>
 </html>
