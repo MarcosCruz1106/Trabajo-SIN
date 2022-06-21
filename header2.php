@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
     <link rel="stylesheet" href="css/general.css">
+    <script src="js/general.js"></script>
+
     <title>TRABAJO SIN</title>
 </head>
 <body>
@@ -19,7 +21,8 @@
         <section class="flex">
             <a href="index.php" class="logo">Tiendamanía</a>
             <nav class="navbar">
-                <a href="#">Productos</a>
+                <a href="productos.php
+                ">Productos</a>
                 <a href="#">Nosotros</a>
                 <a href="#">Contacto</a>
                 <?php
@@ -31,7 +34,7 @@
                         $user = mysqli_fetch_array($result);
                         if($user['tipoUsuario'] == 0){
                         }else{
-                            echo '<a href="#">Administrador</a>';
+                            echo '<a href="administrador.php">Administrador</a>';
                         }
                     }
                     
@@ -40,18 +43,20 @@
             <div class="icons">
                 <div id="menu-btn" class="fas fa-bars"></div>
                 <a href="#"><i class="fas fa-shopping-cart"></i><span></span></a>
+                <p>Hola <a href="login.php">
                 <?php
                     if(isset($_SESSION["usuario"])){
                         $con= mysqli_connect("localhost","root","","mydb");
                         $sql = "SELECT * FROM usuario where dni = '".$_SESSION["usuario"]."'";
                         $result = mysqli_query($con, $sql);
                         $user = mysqli_fetch_array($result);
-                        echo 'Hola '.$user['usuario'];
+                        echo $user['usuario'];
                         
                     }else{
-                        echo '<p> Hola usuario</p>';
+                        echo 'usuario';
                     }
                 ?>
+                </a></p>
                 <a href="#"><i class="fas fa-user"></i><span></span></a>
 
 
@@ -63,5 +68,4 @@
             </div>
 
         </header>
-        ';
     
