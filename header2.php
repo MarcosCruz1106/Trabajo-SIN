@@ -21,8 +21,7 @@
         <section class="flex">
             <a href="index.php" class="logo">Tiendamanía</a>
             <nav class="navbar">
-                <a href="productos.php
-                ">Productos</a>
+                <a href="productos.php">Tienda</a>
                 <a href="#">Nosotros</a>
                 <a href="#">Contacto</a>
                 <?php
@@ -43,23 +42,23 @@
             <div class="icons">
                 <div id="menu-btn" class="fas fa-bars"></div>
                 <a href="#"><i class="fas fa-shopping-cart"></i><span></span></a>
-                <p>Hola <a href="login.php">
                 <?php
                     if(isset($_SESSION["usuario"])){
                         $con= mysqli_connect("localhost","root","","sin_grupo_2");
                         $sql = "SELECT * FROM usuario where dni = '".$_SESSION["usuario"]."'";
                         $result = mysqli_query($con, $sql);
                         $user = mysqli_fetch_array($result);
+<<<<<<< HEAD
                         echo $user['usuario'];
+=======
+                        echo '<p>Hola <a href="config.php">'.$user['usuario'].'</a></p>';
+>>>>>>> aef88c6881288d3e6d3e3988aaffb78f13ac233b
 
                     }else{
-                        echo 'usuario';
+                        echo '<p>Hola <a href="login.php">usuario</a></p>';
                     }
                 ?>
-                </a></p>
-                <a href="#"><i class="fas fa-user"></i><span></span></a>
-
-
+                <a href="config.php"><i class="fas fa-user"></i><span></span></a>
             </div>
         </section>
 

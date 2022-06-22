@@ -212,6 +212,7 @@ a{
 
 .error h1{
     font-size: 6vh;
+    text-align: center;
 }
 
 .btn {
@@ -534,6 +535,14 @@ section{
     color: #111;
 }
 
+.productos .box-container .box .content .location .rojo{
+    color: red;
+}
+
+.productos .box-container .box .content .location .verde{
+    color: green;
+}
+
 
 
 /* Producto-detalle */
@@ -605,3 +614,4 @@ section{
     text-align: justify;
     margin-top: 1rem;
 }
+
