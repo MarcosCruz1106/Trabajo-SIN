@@ -34,8 +34,8 @@
                             echo '<p>'.$row['detalle'].'</p>';
                         echo '</div>';
                         echo '<div class="buttons">';
-                            echo '<a href="#" class="btn">Agregar al carrito</a>';
-                            echo '<a href="#" class="btn">Ver producto</a>';
+                            echo '<a href="show.php?id='.$row['idProducto'].'" class="btn">Ver producto</a>';
+                            echo '<a href="#" class="btn">Agregar a carrito</a>';
                         echo '</div>';
                     echo '</div>';
                 echo '</div>';
