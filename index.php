@@ -11,3 +11,8 @@
             </div>
         </div>
 </div>
+
+<?php
+    include 'header.php';
+    echo $footer_html;
+?>
