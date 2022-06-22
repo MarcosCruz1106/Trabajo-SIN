@@ -6,7 +6,7 @@ $post = (isset($_POST['usuario']) && !empty($_POST['usuario'])) &&
 
 
 if ($post) {
-    $con= mysqli_connect("localhost","root","","mydb");
+    $con= mysqli_connect("localhost","root","","sin_grupo_2");
     $sql = "SELECT * FROM usuario where usuario ='".$_POST['usuario']."' and password = md5('".$_POST['password']."')";
     $result = mysqli_query($con, $sql);
     if(mysqli_num_rows($result) == 1){
@@ -18,11 +18,11 @@ if ($post) {
     }
 }else{
     header("location: login.php");
-    
+
 }
 
 
-    // $con= mysqli_connect("localhost","root","","mydb");
+    // $con= mysqli_connect("localhost","root","","sin_grupo_2");
     // $sql = "SELECT * FROM usuario where usuario ='".$_POST['usuario']."' and password = md5('".$_POST['password']."')";
     // $result = mysqli_query($con, $sql);
     // if(mysqli_num_rows($result) == 1){

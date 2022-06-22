@@ -9,7 +9,7 @@ $post = (isset($_POST['usuario']) && !empty($_POST['usuario'])) &&
 
 if ($post) {
     if($_POST['password']==$_POST['cpassword']){
-        $con= mysqli_connect("localhost","root","","mydb");
+        $con= mysqli_connect("localhost","root","","sin_grupo_2");
         $sql = "SELECT * FROM usuario where usuario ='".$_POST['usuario']."'";
         $result = mysqli_query($con, $sql);
 
@@ -42,8 +42,5 @@ if ($post) {
 
 }else{
     header("location: registro.php");
-    
+
 }
-
-
-
