@@ -48,11 +48,7 @@
                         $sql = "SELECT * FROM usuario where dni = '".$_SESSION["usuario"]."'";
                         $result = mysqli_query($con, $sql);
                         $user = mysqli_fetch_array($result);
-<<<<<<< HEAD
-                        echo $user['usuario'];
-=======
                         echo '<p>Hola <a href="config.php">'.$user['usuario'].'</a></p>';
->>>>>>> aef88c6881288d3e6d3e3988aaffb78f13ac233b
 
                     }else{
                         echo '<p>Hola <a href="login.php">usuario</a></p>';
