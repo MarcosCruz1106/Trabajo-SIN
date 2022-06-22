@@ -9,9 +9,8 @@
 
 <section class="productos" id="productos">
     <div class="box-container">
-
     <?php
-        $con= mysqli_connect("localhost","root","","mydb");
+        $con= mysqli_connect("localhost","root","","sin_grupo_2");
         $sql= "SELECT * FROM productos ORDER BY stock DESC;";
         if ($result = mysqli_query($con, $sql)) {
             while ($row = mysqli_fetch_array($result)){
@@ -31,11 +30,21 @@
                         echo '</div>';
                         echo '<div class="location">';
                             echo '<h3>'.$row['nombre'].'</h3>';
+                            if ($row['stock']==0) {
+                                echo '<p class="rojo"> Sin stock</p>';
+                            }else{
+                                echo '<p class="verde"> Stock: '.$row['stock'].'</p>';
+                            }
+
                             echo '<p>'.$row['detalle'].'</p>';
                         echo '</div>';
                         echo '<div class="buttons">';
-                            echo '<a href="show.php?id='.$row['idProducto'].'" class="btn">Ver producto</a>';
-                            echo '<a href="#" class="btn">Agregar a carrito</a>';
+                            echo '<a href="show.php?id='.$row['idProducto'].'" class="btn">Ver</a>';
+                            if ($row['stock']==0) {
+                                echo '<a href="error5.php" class="btn">Agregar</a>';
+                            }else{
+                                echo '<a href="#" class="btn">Agregar</a>';
+                            }
                         echo '</div>';
                     echo '</div>';
                 echo '</div>';
