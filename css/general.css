@@ -534,3 +534,74 @@ section{
     color: #111;
 }
 
+
+
+/* Producto-detalle */
+.contenedor-imagen{
+    display: flex;
+    width: 100%;
+    padding: 2rem 5%;
+    flex-direction: row;
+    gap: 3rem;
+    align-items: center;
+}
+
+.contenedor-imagen .imagen{
+    width: 50%;
+    display: flex;
+    align-items: center;
+}
+
+.contenedor-imagen .imagen img{
+    width: 100%;
+}
+
+.contenedor-imagen .contenedor{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: .5rem;
+}
+
+.contenedor-imagen .contenedor h1{
+    font-weight: bold;
+    font-size: 2.2rem;
+}
+
+.contenedor-imagen .contenedor .caracteristicas{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+}
+
+.contenedor-imagen .contenedor .caracteristicas .info{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 2rem;
+    align-items: center;
+}
+
+.contenedor-imagen .contenedor .caracteristicas .info .precio{
+    padding: 1rem;
+    border-radius: .5rem;
+    background: #e74c3c;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.contenedor-imagen .contenedor .caracteristicas .info .stock{
+    padding: 1rem;
+    border-radius: .5rem;
+    background:chocolate;
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.contenedor-imagen .contenedor h2{
+    font-size: 1.5rem;
+    text-align: justify;
+    margin-top: 1rem;
+}
