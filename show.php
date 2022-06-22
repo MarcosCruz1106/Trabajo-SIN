@@ -1,10 +1,10 @@
 <?php
     include 'header2.php';
 
-    $con= mysqli_connect("localhost","root","","mydb");
+    $con= mysqli_connect("localhost","root","","sin_grupo_2");
     $sql= "SELECT * FROM productos where idProducto = '".$_GET['id']."'";
     $result = mysqli_query($con, $sql);
-    $producto = mysqli_fetch_array($result);  
+    $producto = mysqli_fetch_array($result);
 ?>
 
 <br>

@@ -11,7 +11,7 @@
     <div class="box-container">
 
     <?php
-        $con= mysqli_connect("localhost","root","","mydb");
+        $con= mysqli_connect("localhost","root","","sin_grupo_2");
         $sql= "SELECT * FROM productos ORDER BY stock DESC;";
         if ($result = mysqli_query($con, $sql)) {
             while ($row = mysqli_fetch_array($result)){
