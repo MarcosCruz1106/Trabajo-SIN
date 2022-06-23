@@ -43,7 +43,7 @@
                             if ($row['stock']==0) {
                                 echo '<a href="error5.php" class="btn">Agregar</a>';
                             }else{
-                                echo '<a href="#" class="btn">Agregar</a>';
+                                echo '<a href="add_to_cart.php?id='.$row['idProducto'].'" class="btn">Agregar</a>';
                             }
                         echo '</div>';
                     echo '</div>';
