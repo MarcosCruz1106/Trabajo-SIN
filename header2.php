@@ -41,7 +41,12 @@
             </nav>
             <div class="icons">
                 <div id="menu-btn" class="fas fa-bars"></div>
-                <a href="#"><i class="fas fa-shopping-cart"></i><span></span></a>
+                <?php
+                if(isset($_SESSION["cart"]) && count($_SESSION["cart"]) > 0){
+                    echo '<span font-size="10px">('.count($_SESSION["cart"]).')</span>';
+                }
+                ?>
+                <a href="cart.php"><i class="fas fa-shopping-cart"></i><span></span></a>
                 <?php
                     if(isset($_SESSION["usuario"])){
                         $con= mysqli_connect("localhost","root","","sin_grupo_2");

@@ -8,6 +8,8 @@
 <br>
 
 <section class="productos" id="productos">
+    <?php 
+    ?>
     <div class="box-container">
     <?php
         $con= mysqli_connect("localhost","root","","sin_grupo_2");

@@ -405,12 +405,14 @@ section{
     overflow:hidden;
     position: relative;
     width: 100%;
-    height: 20rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .productos .box-container .box .image-container img{
-    width: 100%;
-    height: 20rem;
+    height: 100%;
     object-fit: cover;
     transition: .2s linear;
 }
@@ -477,7 +479,7 @@ section{
 
 .productos .box-container .box .content .price h3{
     color:var(--red);
-    font-size: 2rem;
+    font-size: 1.5rem;
     margin-right: auto;
     margin-bottom: 0;
     font-weight: bold;
@@ -488,9 +490,9 @@ section{
     font-size: 1.5rem;
     margin-right: .5rem;
     border-radius: .5rem;
-    height:4rem;
-    width:4rem;
-    line-height: 4rem;
+    height:3rem;
+    width:3rem;
+    line-height: 3rem;
     text-align: center;
     background:#f7f7f7;
 }
@@ -501,19 +503,20 @@ section{
 }
 
 .productos .box-container .box .content .location{
-    padding:1rem 0;
+    padding:.5rem 0;
 }
 
 .productos .box-container .box .content .location h3{
-    font-size: 2rem;
+    font-size: 1.5rem;
     color:#333;
 }
 
 .productos .box-container .box .content .location p{
-    font-size: 1.2rem;
+    font-size: 1rem;
     color:#666;
-    line-height: 1.5;
-    padding-top: .5rem;
+    line-height: 1;
+    padding: .5rem 0;
+    margin: 0;
 }
 
 .productos .box-container .box .content .buttons{
