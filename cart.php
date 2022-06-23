@@ -67,6 +67,20 @@
     </table>
 </div>
 
+<p>Medio de pago:</p>
+<select name="medio_de_pago" id="medio" class="form-select" aria-label=".form-select-lg example" size="1">
+    
+    <?php
+        $con2= mysqli_connect("localhost","root","","sin_grupo_2");
+        $sql2 = "SELECT * FROM medios_de_pago";
+        if($result2 = mysqli_query($con2, $sql2)){
+            while ($row = mysqli_fetch_array($result2)){
+                echo '<option value="'.$row['idMedio'].'">'.$row['nombre'].'</option>';
+            }
+        } 
+    ?>
+</select>
+
 <?php
 include 'header.php';
 echo $footer_html;
