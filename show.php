@@ -24,7 +24,7 @@
                 if($producto['stock'] == 0){
                     echo '<a href="error5.php" class="btn">Agregar al carrito</a>';
                 }else{
-                    echo '<a href="#" class="btn">Agregar al carrito</a>';
+                    echo '<a href="add_to_cart.php?id='.$producto['idProducto'].'" class="btn">Agregar al carrito</a>';
                 }
             ?>
             <div class="info">

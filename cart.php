@@ -8,16 +8,16 @@
 <div class="container-fluid p-5 bg-primary text-white text-center">
     <h1>Carrito de compras</h1>
 </div>
-
+<!-- <br> -->
 <div class="col-sm-12">
     <table class="table table-striped table-responsive">
-        <thead>
+        <thead class="table-primary">
             <tr>
-                <td>Nombre</td>
-                <td>Cantidad</td>
-                <td>Precio unitario</td>
-                <td>Subtotal</td>
-                <td>&nbsp;</td>
+                <td class="">Nombre</td>
+                <td class="">Cantidad</td>
+                <td class="">Precio unitario</td>
+                <td class="">Subtotal</td>
+                <td class="">&nbsp;</td>
             </tr>
         </thead>
         <tbody>
@@ -36,7 +36,7 @@
                     echo '<td>';
                         echo $value["nombre"];
                     echo '</td>';
-                    echo '<td>';
+                    echo '<td >';
                         echo $value["qty"];
                     echo '</td>';
                     echo '<td>';
@@ -46,7 +46,7 @@
                         echo 'S/. '.$value["precio"]*$value["qty"];
                     echo '</td>';
                     echo '<td>';
-                        echo '<a href="remove_from_cart.php?id='.$key.'"><i class="fas fa-minus"></i></a>&nbsp;&nbsp;';
+                        echo '<a href="remove_from_cart.php?id='.$key.'"><i class="fas fa-minus"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;';
                         echo '<a href="remove_from_cart.php?remove_all=1&id='.$key.'"><i class="fas fa-trash"></i></a>';
                     echo '</td>';
                 echo '</tr>';
@@ -54,7 +54,7 @@
         }
         
     ?>
-            <tfoot>
+            <tfoot class="table-primary">
                 <tr class="success">
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
