@@ -58,12 +58,12 @@
 
 
                         echo '<td>';
-                            echo '<a href="#"><i class="fa-solid fa-eye"></i></a>&nbsp; | &nbsp;';
-                            echo '<a href="#"><i class="fa-solid fa-pen"></i></a>&nbsp; | &nbsp;';
-                            echo '<a href="#"><i class="fa-solid fa-trash"></i></a>&nbsp;';                                    
+                            echo '<a href="show.php?id='.$row['idProducto'].'"><i class="fa-solid fa-eye"></i></a>&nbsp; | &nbsp;';
+                            echo '<a href="editarProducto.php?id='.$row['idProducto'].'"><i class="fa-solid fa-pen"></i></a>&nbsp; | &nbsp;';
+                            echo '<a href="deleteProducto.php?id='.$row['idProducto'].'"><i class="fa-solid fa-trash"></i></a>&nbsp;';
                             echo '</td>';
-                    echo '</tr>';  
-                    
+                    echo '</tr>';
+
                     $i++;
                 }
             }

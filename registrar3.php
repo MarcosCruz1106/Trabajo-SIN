@@ -10,7 +10,7 @@ if ($post) {
     $con= mysqli_connect("localhost","root","","sin_grupo_2");
     $sql4= "INSERT INTO productos (idProducto,nombre, detalle, stock, precio, imagen)  VALUES (NULL,'".$_POST['nombre']."', '".$_POST['detalle']."', '".$_POST['stock']."', '".$_POST['precio']."', '".$_POST['imagen']."');";
     $result = mysqli_query($con, $sql4);
-    header("location: newProducto.php");
+    header("location: productos2.php");
 
 }else{
     header("location: registar3.php");
