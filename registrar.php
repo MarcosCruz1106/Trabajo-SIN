@@ -28,7 +28,7 @@ if ($post) {
                 if ($result2->num_rows > 0){
                     header("location: error3.php");
                 }else{
-                    $sql4= "INSERT INTO usuario (dni, nombres, apellidos, celular, email, usuario, password, tipoUsuario)  VALUES ('".$_POST['dni']."', '', '', '', '".$_POST['email']."', '".$_POST['usuario']."', md5('".$_POST['password']."'), '0');";
+                    $sql4= "INSERT INTO usuario (dni, nombres, apellidos, email, usuario, password, tipoUsuario)  VALUES ('".$_POST['dni']."', '', '', '".$_POST['email']."', '".$_POST['usuario']."', md5('".$_POST['password']."'), '0');";
                     $result = mysqli_query($con, $sql4);
                     header("location: login.php");
                     //Causa error llevarlo de frente al index. Podemos buscar soluciones
