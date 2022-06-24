@@ -6,7 +6,8 @@
 <br>
 
 <div class="container-fluid p-5 bg-primary text-white text-center">
-    <h1>Carrito de compras</h1>
+    <h1>Detalle de la compra</h1>
+    <p>Proporcionamos una vista previa de la compra que usted está realizando</p>
 </div>
 <!-- <br> -->
 <div class="col-sm-12">
@@ -14,10 +15,10 @@
         <thead class="table-primary">
             <tr>
                 <td class="">Nombre</td>
+                <td>&nbsp;</td>
                 <td class="">Cantidad</td>
                 <td class="">Precio unitario</td>
                 <td class="">Subtotal</td>
-                <td class="">&nbsp;</td>
             </tr>
         </thead>
         <tbody>
@@ -37,6 +38,9 @@
                         echo $value["nombre"];
                     echo '</td>';
                     echo '<td >';
+                        echo '&nbsp;';
+                    echo '</td>';
+                    echo '<td >';
                         echo $value["qty"];
                     echo '</td>';
                     echo '<td>';
@@ -44,10 +48,6 @@
                     echo '</td>';
                     echo '<td>';
                         echo 'S/. '.$value["precio"]*$value["qty"];
-                    echo '</td>';
-                    echo '<td>';
-                        echo '<a href="remove_from_cart.php?id='.$key.'"><i class="fas fa-minus"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;';
-                        echo '<a href="remove_from_cart.php?remove_all=1&id='.$key.'"><i class="fas fa-trash"></i></a>';
                     echo '</td>';
                 echo '</tr>';
             }
@@ -58,34 +58,51 @@
                 <tr class="success">
                     <td>&nbsp;</td>
                     <td>&nbsp;</td>
+                    <td>&nbsp;</td>
                     <td>Total</td>
                     <td><b>S/. <?php echo $total ?></b></td>
-                    <td>&nbsp;</td>
+                    
                 </tr>
             </tfoot>
         </tbody>
     </table>
 </div>
 
-<form class="caja" action="preboleta.php" method="POST">
+<form class="caja2" action="preboleta.php" method="POST">
     <div class="medio">
-        <p>Medio de pago:</p>
-        <select name="medio" id="medio" class="form-select" aria-label=".form-select-lg example" size="1">
-            <?php
-                $con2= mysqli_connect("localhost","root","","sin_grupo_2");
-                $sql2 = "SELECT * FROM medios_de_pago";
-                if($result2 = mysqli_query($con2, $sql2)){
-                    while ($row = mysqli_fetch_array($result2)){
-                        echo '<option value="'.$row['idMedio'].'">'.$row['nombre'].'</option>';
-                    }
-                } 
-            ?>
-        </select>
-    </div>
+        <p>Medio de pago: 
+        <?php
+            if (isset($_POST['medio'])) {
+                $con= mysqli_connect("localhost","root","","sin_grupo_2");
+                $sql= "SELECT * FROM medios_de_pago	 where idMedio = '".$_POST['medio']."'";
+                $result = mysqli_query($con, $sql);
+                $medio = mysqli_fetch_array($result);
+                echo $medio['nombre'];
+            }
+        ?>
+        </p>
+        <p>Nombre del cliente:
+        <?php 
+            if (isset($user)) {
+                echo $user['nombres']. ' ' .$user['apellidos'];
+            }
+        ?>
+        </p>
+        <p>Dirección de entrega:
+        <?php
+            if (isset($user)) {
+                echo $user['dirección'];
+            } 
+        ?>
+        </p>
 
-    <div class="botones">
-        <a href="productos.php" class="btn">Seguir comprando</a>
-        <button href="preboleta.php" class="btn">Finalizar compra</button>
+    </div>
+    <div class="seguridad">
+        <p><b>¿está seguro de finalizar la compra?</b></p>
+        <div class="botones2">
+            <button href="boleta.php" class="btn">Si</button>
+            <button href="preboleta.php" class="btn">No</button>
+        </div>
     </div>
 </form>
 
