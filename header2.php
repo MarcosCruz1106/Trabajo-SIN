@@ -12,9 +12,7 @@
     <title>TRABAJO SIN</title>
 </head>
 <body>
-    <?
 
-    ?>
 
     <header class="header">
         <section class="flex">

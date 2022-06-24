@@ -4,7 +4,7 @@
     if(isset($_SESSION['usuario'])){
         echo '
             <div class="opciones123">
-                <a href="" class="btn">AAA</a>
+                <a href="showUsuario.php" class="btn">Ver mi perfil</a>
                 <a href="" class="btn">AAAA</a>
                 <a href="logout.php" class="btn">Cerrar Sesión</a>
             </div>';
