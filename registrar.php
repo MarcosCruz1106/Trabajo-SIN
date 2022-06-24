@@ -5,6 +5,8 @@ $post = (isset($_POST['usuario']) && !empty($_POST['usuario'])) &&
         (isset($_POST['password']) && !empty($_POST['password']))&&
         (isset($_POST['email']) && !empty($_POST['email'])) &&
         (isset($_POST['dni']) && !empty($_POST['dni'])) &&
+        (isset($_POST['nombre']) && !empty($_POST['nombre'])) &&
+        (isset($_POST['apellidos']) && !empty($_POST['apellidos'])) &&
         (isset($_POST['cpassword']) && !empty($_POST['cpassword']));
 
 if ($post) {
@@ -28,7 +30,7 @@ if ($post) {
                 if ($result2->num_rows > 0){
                     header("location: error3.php");
                 }else{
-                    $sql4= "INSERT INTO usuario (dni, nombres, apellidos, email, usuario, password, tipoUsuario)  VALUES ('".$_POST['dni']."', '', '', '".$_POST['email']."', '".$_POST['usuario']."', md5('".$_POST['password']."'), '0');";
+                    $sql4= "INSERT INTO usuario (dni, nombres, apellidos, email, usuario, password, tipoUsuario)  VALUES ('".$_POST['dni']."', '".$_POST['nombre']."', '".$_POST['apellidos']."', '".$_POST['email']."', '".$_POST['usuario']."', md5('".$_POST['password']."'), '0');";
                     $result = mysqli_query($con, $sql4);
                     header("location: login.php");
                     //Causa error llevarlo de frente al index. Podemos buscar soluciones
