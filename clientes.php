@@ -21,7 +21,7 @@
                 <td><a href="#" >Nuevo Cliente</a></td>
             </tr>
         </thead>
-                        
+
         <tbody>
         <?php
             $con= mysqli_connect("localhost","root","","sin_grupo_2");
@@ -53,7 +53,7 @@
                         echo '</td>';
 
                         echo '<td>';
-                            echo '<a href="#">Ver</a>&nbsp;&nbsp;';
+                            echo '<a href="showUsuario2.php?id='.$row['dni'].'">Ver</a>&nbsp;&nbsp;';
                             echo '<a href="#">Editar</a>&nbsp;&nbsp;';
                             echo '<a href="#">Eliminar</a>&nbsp;&nbsp;';                                    
                             echo '</td>';
