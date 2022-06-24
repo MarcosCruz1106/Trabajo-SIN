@@ -96,12 +96,26 @@
         ?>
         </p>
 
+        <p>Fecha de la compra:
+        <?php
+            echo $fecha = date('d-m-Y', time());
+        ?>
+        </p>
+
     </div>
     <div class="seguridad">
         <p><b>¿está seguro de finalizar la compra?</b></p>
         <div class="botones2">
-            <button href="boleta.php" class="btn">Si</button>
-            <button href="preboleta.php" class="btn">No</button>
+        <?php
+            if (isset($_POST['medio'])) {
+                echo '<a href="boleta.php?fecha='.$fecha.'&total='.$total.'&idMedio='.$_POST['medio'].'" class="btn">Si</a>';
+            } else{
+                echo '<a href="boleta.php?fecha='.$fecha.'&total='.$total.'" class="btn">Si</a>';
+            }
+
+            
+        ?>
+            <a href="cart.php" class="btn">No</a>
         </div>
     </div>
 </form>

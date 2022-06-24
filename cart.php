@@ -85,7 +85,14 @@
 
     <div class="botones">
         <a href="productos.php" class="btn">Seguir comprando</a>
-        <button href="preboleta.php" class="btn">Finalizar compra</button>
+        <?php 
+            if (isset($user)) {
+                echo '<button href="preboleta.php" class="btn">Finalizar compra</button>';
+            }else{
+                echo '<a href="error6.php" class="btn">Finalizar compra</a>';
+            }
+        ?>
+        
     </div>
 </form>
 
