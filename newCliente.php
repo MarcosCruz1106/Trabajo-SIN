@@ -35,7 +35,6 @@
 			<div class="input-group">
 				<button name="submit" class="btn">Registrar</button>
 			</div>
-			<p class="login-register-text">¿Ya tienes cuenta? <a href="login.php">Inicia sesión </a>.</p>
 		</form>
 	</div>
 </div>

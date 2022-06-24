@@ -57,9 +57,9 @@
                         echo '</td>';
 
                         echo '<td>';
-                            echo '<a href="showUsuario2.php?id='.$row['dni'].'">Ver</a>&nbsp;&nbsp;';
-                            echo '<a href="editarCliente.php?id='.$row['dni'].'">Editar</a>&nbsp;&nbsp;';
-                            echo '<a href="deleteCliente.php?id='.$row['dni'].'">Eliminar</a>&nbsp;&nbsp;';                                    
+                            echo '<a href="showUsuario2.php?id='.$row['dni'].'"><i class="fa-solid fa-eye"></i></a>&nbsp; | &nbsp;';
+                            echo '<a href="editarCliente.php?id='.$row['dni'].'"><i class="fa-solid fa-pen"></i></a>&nbsp; | &nbsp;';
+                            echo '<a href="deleteCliente.php?id='.$row['dni'].'"><i class="fa-solid fa-trash"></i></a>&nbsp;';                                    
                             echo '</td>';
                     echo '</tr>';    
                 }
