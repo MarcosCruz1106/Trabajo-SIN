@@ -5,6 +5,7 @@
 
 <div class="error">
     <h1 class="h1">Estamos trabajando en esta sección</h1>
+    <a href="index.php" class="btn">Volver al inicio</a>
 </div>
 
 

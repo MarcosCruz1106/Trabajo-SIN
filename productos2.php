@@ -14,22 +14,32 @@
     <table class="table table-striped table-responsive">
         <thead class="table-primary">
             <tr>
+                <td>Orden</td>
                 <td>Nombre</td>
                 <td>Detalle</td>
                 <td></td>
                 <td>Stock</td>
                 <td>Precio</td>
-                <td><a href="#" >Nuevo Producto</a></td>
+                <td><a href="newProducto.php" >Nuevo Producto</a></td>
             </tr>
         </thead>
 
         <tbody>
         <?php
             $con= mysqli_connect("localhost","root","","sin_grupo_2");
-            $sql= "SELECT * FROM productos";
+            $sql= "SELECT * FROM productos ORDER BY stock DESC";
             if($result = mysqli_query($con, $sql)){
+                $i=1;
                 while ($row = mysqli_fetch_array($result)){
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9e5d03f8a7badb13190297575b3a232d7f10a108
                     echo '<tr>';
+                        echo '<td width="10px">';
+                            echo $i;
+                        echo '</td>';
+
                         echo '<td width="200px">';
                             echo $row['nombre'];
                         echo '</td>';
@@ -52,11 +62,13 @@
 
 
                         echo '<td>';
-                            echo '<a href="#">Ver</a>&nbsp;&nbsp;';
-                            echo '<a href="#">Editar</a>&nbsp;&nbsp;';
-                            echo '<a href="#">Eliminar</a>&nbsp;&nbsp;';                                    
+                            echo '<a href="#"><i class="fa-solid fa-eye"></i></a>&nbsp; | &nbsp;';
+                            echo '<a href="#"><i class="fa-solid fa-pen"></i></a>&nbsp; | &nbsp;';
+                            echo '<a href="#"><i class="fa-solid fa-trash"></i></a>&nbsp;';                                    
                             echo '</td>';
-                    echo '</tr>';    
+                    echo '</tr>';  
+                    
+                    $i++;
                 }
             }
             mysqli_close($con);
