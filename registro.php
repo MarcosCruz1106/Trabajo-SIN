@@ -3,7 +3,7 @@
     echo $header_html;
 ?>
 
-<div class="fondo">
+<div class="detalle">
 	<div class="container">
 		<form action="registrar.php" method="POST" class="login-email">
 			<p class="login-text" style="font-size: 2rem; font-weight: 800;">Registro</p>
@@ -15,6 +15,12 @@
 			</div>
 			<div class="input-group">
 				<input type="text" placeholder="Dni" name="dni">
+			</div>
+			<div class="input-group">
+				<input type="text" placeholder="Nombres" name="nombre">
+			</div>
+			<div class="input-group">
+				<input type="text" placeholder="Apellidos" name="apellidos">
 			</div>
 			<div class="input-group">
 				<input type="password" placeholder="Contraseña" name="password">
