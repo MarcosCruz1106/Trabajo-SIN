@@ -29,8 +29,6 @@
             $sql= "SELECT * FROM productos";
             if($result = mysqli_query($con, $sql)){
                 while ($row = mysqli_fetch_array($result)){
-                    
-
                     echo '<tr>';
                         echo '<td width="200px">';
                             echo $row['nombre'];
@@ -49,7 +47,7 @@
                         echo '</td>';
 
                         echo '<td>';
-                            echo $row['precio'];
+                            echo 'S/.'.$row['precio'];
                         echo '</td>';
 
 
