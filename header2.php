@@ -58,7 +58,7 @@
                         echo '<p>Hola <a href="login.php">usuario</a></p>';
                     }
                 ?>
-                <a href="config.php"><i class="fas fa-user"></i><span></span></a>
+                <a href="config.php"><i class="fa-solid fa-gear"></i></a>
             </div>
         </section>
 
