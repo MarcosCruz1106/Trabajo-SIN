@@ -31,10 +31,6 @@
             if($result = mysqli_query($con, $sql)){
                 $i=1;
                 while ($row = mysqli_fetch_array($result)){
-<<<<<<< HEAD
-=======
-
->>>>>>> 9e5d03f8a7badb13190297575b3a232d7f10a108
                     echo '<tr>';
                         echo '<td width="10px">';
                             echo $i;
