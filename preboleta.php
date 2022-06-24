@@ -98,7 +98,7 @@
 
         <p>Fecha de la compra:
         <?php
-            echo $fecha = date('d-m-Y', time());
+            echo $fecha = date('Y-m-d', time());
         ?>
         </p>
 
@@ -108,9 +108,9 @@
         <div class="botones2">
         <?php
             if (isset($_POST['medio'])) {
-                echo '<a href="boleta.php?fecha='.$fecha.'&total='.$total.'&idMedio='.$_POST['medio'].'" class="btn">Si</a>';
+                echo '<a href="boleta.php?fecha='.$fecha.'&total='.$total.'&medio='.$_POST['medio'].'" class="btn">Si</a>';
             } else{
-                echo '<a href="boleta.php?fecha='.$fecha.'&total='.$total.'" class="btn">Si</a>';
+                echo '<a href="#" class="btn">Si</a>';
             }
 
             
