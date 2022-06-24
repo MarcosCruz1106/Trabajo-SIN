@@ -19,8 +19,8 @@
             <a href="index.php" class="logo">Tiendamanía</a>
             <nav class="navbar">
                 <a href="productos.php">Tienda</a>
-                <a href="#">Nosotros</a>
-                <a href="#">Contacto</a>
+                <a href="error7.php">Nosotros</a>
+                <a href="error7.php">Contacto</a>
                 <?php
                     session_start();
                     if(isset($_SESSION["usuario"])){
