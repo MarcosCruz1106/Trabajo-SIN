@@ -6,7 +6,6 @@
             <div class="opciones123">
                 <a href="clientes.php" class="btn">Sección Clientes</a>
                 <a href="productos2.php" class="btn">Sección Productos</a>
-                <a href="#" class="btn">AAAA</a>
             </div>';
     }else{
         echo 
