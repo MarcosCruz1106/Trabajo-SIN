@@ -17,8 +17,9 @@
                 <td>DNI</td>
                 <td>Nombres</td>
                 <td>Email</td>
+                <td>Nickname</td>
                 <td>Rol</td>
-                <td><a href="#" >Nuevo Cliente</a></td>
+                <td><a href="newCliente.php" >Nuevo Cliente</a></td>
             </tr>
         </thead>
 
@@ -47,6 +48,9 @@
                             echo $row['email'];
                         echo '</td>';
 
+                        echo '<td>';
+                            echo $row['usuario'];
+                        echo '</td>';
 
                         echo '<td>';
                             echo $rol;
@@ -54,8 +58,8 @@
 
                         echo '<td>';
                             echo '<a href="showUsuario2.php?id='.$row['dni'].'">Ver</a>&nbsp;&nbsp;';
-                            echo '<a href="#">Editar</a>&nbsp;&nbsp;';
-                            echo '<a href="#">Eliminar</a>&nbsp;&nbsp;';                                    
+                            echo '<a href="editarCliente.php?id='.$row['dni'].'">Editar</a>&nbsp;&nbsp;';
+                            echo '<a href="deleteCliente.php?id='.$row['dni'].'">Eliminar</a>&nbsp;&nbsp;';                                    
                             echo '</td>';
                     echo '</tr>';    
                 }
