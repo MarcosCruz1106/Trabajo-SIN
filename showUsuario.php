@@ -68,4 +68,4 @@
                 <p><b>Total consumido: </b>S/. <?php echo $total?></p>
             </div>
         </div>
-    </section>
+</section>
