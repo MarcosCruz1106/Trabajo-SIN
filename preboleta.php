@@ -88,13 +88,6 @@
             }
         ?>
         </p>
-        <p>Dirección de entrega:
-        <?php
-            if (isset($user)) {
-                echo $user['dirección'];
-            } 
-        ?>
-        </p>
 
         <p>Fecha de la compra:
         <?php
