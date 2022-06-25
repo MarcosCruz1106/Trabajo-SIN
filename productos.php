@@ -8,11 +8,11 @@
 <br>
 
 <section class="productos" id="productos">
-    <?php 
+    <?php
     ?>
     <div class="box-container">
     <?php
-        $con= mysqli_connect("localhost","root","","sin_grupo_2");
+        include ('db_conf.php');
         $sql= "SELECT * FROM productos ORDER BY stock DESC;";
         if ($result = mysqli_query($con, $sql)) {
             while ($row = mysqli_fetch_array($result)){

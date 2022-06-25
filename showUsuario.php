@@ -3,12 +3,12 @@
 <?php
     include 'header2.php';
     if(isset($_SESSION["usuario"])){
-        $con= mysqli_connect("localhost","root","","sin_grupo_2");
+        include ('db_conf.php');
         $sql = "SELECT * FROM usuario where dni = '".$_SESSION["usuario"]."'";
         $result = mysqli_query($con, $sql);
         $user = mysqli_fetch_array($result);
     }else{
-        echo 
+        echo
             '<div class="error">
             <h1 class="h1">Aún no has iniciado con tu perfil</h1>
             <a href="login.php" class="btn">Ingresar</a>
@@ -43,7 +43,7 @@
                     <li><i class="fa-solid fa-envelope"></i> Direccion de correo: <b><?php echo $user['email']?></b></li>
                     <li><i class="fa-solid fa-person"></i> Número de identificación: <b><?php echo $user['dni']?></b></li>
                     <li><i class="fa-solid fa-people-group"></i></i> Rol: <b><?php echo $rol?></b></li>
-                    
+
                 </ul>
             </div>
 
@@ -62,7 +62,7 @@
                             }
                         }else{
                             echo '<p>No ha realizado compras por el momento</p>';
-                        }    
+                        }
                     ?>
                 </ul>
                 <p><b>Total consumido: </b>S/. <?php echo $total?></p>

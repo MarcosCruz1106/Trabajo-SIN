@@ -8,7 +8,7 @@ $post = (isset($_POST['nombre']) && !empty($_POST['nombre'])) &&
         (isset($_POST['imagen']) && !empty($_POST['imagen']));
 
 if ($post) {
-        $con= mysqli_connect("localhost","root","","sin_grupo_2");
+        include ('db_conf.php');
         $sql4= "UPDATE productos SET nombre= '".$_POST['nombre']."', detalle = '".$_POST['detalle']."', stock = '".$_POST['stock']."', precio = '".$_POST['precio']."', imagen= '".$_POST['imagen']."' WHERE idProducto= '".$_POST['idProducto']."'";
         $result = mysqli_query($con, $sql4);
         header("location: productos2.php");

@@ -11,7 +11,7 @@ $post = (isset($_POST['usuario']) && !empty($_POST['usuario'])) &&
 
 if ($post) {
     if($_POST['password']==$_POST['cpassword']){
-        $con= mysqli_connect("localhost","root","","sin_grupo_2");
+        include ('db_conf.php');
         $sql = "SELECT * FROM usuario where usuario ='".$_POST['usuario']."'";
         $result = mysqli_query($con, $sql);
 

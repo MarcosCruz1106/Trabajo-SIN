@@ -24,7 +24,7 @@
                 <?php
                     session_start();
                     if(isset($_SESSION["usuario"])){
-                        $con= mysqli_connect("localhost","root","","sin_grupo_2");
+                        include ('db_conf.php');
                         $sql = "SELECT * FROM usuario where dni = '".$_SESSION["usuario"]."'";
                         $result = mysqli_query($con, $sql);
                         $user = mysqli_fetch_array($result);
@@ -40,13 +40,12 @@
                 <div id="menu-btn" class="fas fa-bars"></div>
                 <?php
                 if(isset($_SESSION["cart"]) && count($_SESSION["cart"]) > 0){
-                    echo '<span font-size="10px">('.count($_SESSION["cart"]).')</span>';
+                    echo '<span class="badge bg-secondary" style="padding:5px 8px; font-size:20px">'.count($_SESSION["cart"]).'</span>';
                 }
                 ?>
                 <a href="cart.php"><i class="fas fa-shopping-cart"></i><span></span></a>
                 <?php
                     if(isset($_SESSION["usuario"])){
-                        $con= mysqli_connect("localhost","root","","sin_grupo_2");
                         $sql = "SELECT * FROM usuario where dni = '".$_SESSION["usuario"]."'";
                         $result = mysqli_query($con, $sql);
                         $user = mysqli_fetch_array($result);

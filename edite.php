@@ -11,7 +11,7 @@ $post = (isset($_POST['usuario']) && !empty($_POST['usuario'])) &&
 
 if ($post) {
     if($_POST['password']==$_POST['cpassword']){
-        $con= mysqli_connect("localhost","root","","sin_grupo_2");
+        include ('db_conf.php');
 
         $sql4= "UPDATE usuario SET dni= '".$_POST['dni']."', nombres = '".$_POST['nombre']."', apellidos = '".$_POST['apellidos']."', email = '".$_POST['email']."', usuario= '".$_POST['usuario']."', password= md5('".$_POST['password']."'), tipoUsuario = '".$_POST['tipoUsuario']."' WHERE dni= '".$_POST['dni']."'";
         $result = mysqli_query($con, $sql4);

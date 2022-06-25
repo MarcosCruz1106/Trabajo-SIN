@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$con= mysqli_connect("localhost","root","","sin_grupo_2");
+include ('db_conf.php');
 $sql= "SELECT * FROM productos where idProducto = '".$_GET['id']."'";
 $result = mysqli_query($con, $sql);
 $producto = mysqli_fetch_array($result);

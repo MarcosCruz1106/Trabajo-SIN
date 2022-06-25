@@ -26,7 +26,7 @@
 
         <tbody>
         <?php
-            $con= mysqli_connect("localhost","root","","sin_grupo_2");
+            include ('db_conf.php');
             $sql= "SELECT * FROM productos ORDER BY stock DESC";
             if($result = mysqli_query($con, $sql)){
                 $i=1;

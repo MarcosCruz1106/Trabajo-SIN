@@ -24,7 +24,7 @@
         <tbody>
 
     <?php
-    
+
         $total=0;
         if (isset($_SESSION["cart"])) {
             foreach ($_SESSION["cart"] as $key => $value) {
@@ -52,7 +52,7 @@
                 echo '</tr>';
             }
         }
-        
+
     ?>
             <tfoot class="table-primary">
                 <tr class="success">
@@ -61,7 +61,7 @@
                     <td>&nbsp;</td>
                     <td>Total</td>
                     <td><b>S/. <?php echo $total ?></b></td>
-                    
+
                 </tr>
             </tfoot>
         </tbody>
@@ -70,10 +70,10 @@
 
 <form class="caja2" action="preboleta.php" method="POST">
     <div class="medio">
-        <p>Medio de pago: 
+        <p>Medio de pago:
         <?php
             if (isset($_POST['medio'])) {
-                $con= mysqli_connect("localhost","root","","sin_grupo_2");
+                include ('db_conf.php');
                 $sql= "SELECT * FROM medios_de_pago	 where idMedio = '".$_POST['medio']."'";
                 $result = mysqli_query($con, $sql);
                 $medio = mysqli_fetch_array($result);
@@ -82,7 +82,7 @@
         ?>
         </p>
         <p>Nombre del cliente:
-        <?php 
+        <?php
             if (isset($user)) {
                 echo $user['nombres']. ' ' .$user['apellidos'];
             }
@@ -106,7 +106,7 @@
                 echo '<a href="#" class="btn">Si</a>';
             }
 
-            
+
         ?>
             <a href="cart.php" class="btn">No</a>
         </div>

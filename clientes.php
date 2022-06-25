@@ -3,6 +3,7 @@
 <br>
 <?php
     include 'header2.php';
+    //phpinfo();
 ?>
 
 <div class="container-fluid p-5 bg-primary text-white text-center">
@@ -25,7 +26,7 @@
 
         <tbody>
         <?php
-            $con= mysqli_connect("localhost","root","","sin_grupo_2");
+            include ('db_conf.php');
             $sql= "SELECT * FROM usuario";
             if($result = mysqli_query($con, $sql)){
                 while ($row = mysqli_fetch_array($result)){
@@ -59,9 +60,9 @@
                         echo '<td>';
                             echo '<a href="showUsuario2.php?id='.$row['dni'].'"><i class="fa-solid fa-eye"></i></a>&nbsp; | &nbsp;';
                             echo '<a href="editarCliente.php?id='.$row['dni'].'"><i class="fa-solid fa-pen"></i></a>&nbsp; | &nbsp;';
-                            echo '<a href="deleteCliente.php?id='.$row['dni'].'"><i class="fa-solid fa-trash"></i></a>&nbsp;';                                    
+                            echo '<a href="deleteCliente.php?id='.$row['dni'].'"><i class="fa-solid fa-trash"></i></a>&nbsp;';
                             echo '</td>';
-                    echo '</tr>';    
+                    echo '</tr>';
                 }
             }
             mysqli_close($con);
