@@ -3,6 +3,18 @@
 <br>
 <?php
     include 'header2.php';
+    include ('db_conf.php');
+
+    if(isset($_SESSION['usuario'])){
+        $sql = "SELECT * FROM usuario where dni = '".$_SESSION["usuario"]."'";
+        $result = mysqli_query($con, $sql);
+        $user = mysqli_fetch_array($result);
+        if($user['tipoUsuario']!=1){
+            header("location:index.php");
+        }
+    }else{
+		header("location:index.php");
+	}
 ?>
 
 <div class="container-fluid p-5 bg-primary text-white text-center">

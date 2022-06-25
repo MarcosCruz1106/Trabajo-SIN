@@ -13,6 +13,6 @@ if ($post) {
     header("location: productos2.php");
 
 }else{
-    header("location: registar3.php");
+    header("location: newProducto.php");
 
 }

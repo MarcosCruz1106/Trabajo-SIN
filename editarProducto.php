@@ -1,6 +1,19 @@
 <?php
     include 'header.php';
     echo $header_html;
+	session_start();
+	include ('db_conf.php');
+
+    if(isset($_SESSION['usuario'])){
+        $sql = "SELECT * FROM usuario where dni = '".$_SESSION["usuario"]."'";
+        $result = mysqli_query($con, $sql);
+        $user = mysqli_fetch_array($result);
+        if($user['tipoUsuario']!=1){
+            header("location:index.php");
+        }
+    }else{
+		header("location:index.php");
+	}
 ?>
 
 <div class="fondo">
